@@ -7,7 +7,7 @@ var stringDez = "10";
 
 if (numeroUm == stringUm) {
   console.log(
-    "As variáveis numero um e stringum tem o mesmo valor, mas tipos diferentes"
+    "As variáveis numero um e string um tem o mesmo valor, mas tipos diferentes"
   );
 } else {
   console.log("As variáveis numero um e string um não tem o mesmo valor");
