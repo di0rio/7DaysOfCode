@@ -226,5 +226,4 @@ function formatarListaTecnologias(tecnologias) {
   return tecnologias.map((tech, index) => `${index + 1}. ${tech}`).join("\n");
 }
 
-// Iniciar o jogo
 iniciarJogo();
