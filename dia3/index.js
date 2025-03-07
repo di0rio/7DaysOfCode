@@ -1,190 +1,229 @@
+const AREAS = {
+  FRONT_END: "front-end",
+  BACK_END: "back-end",
+};
+
+const TECNOLOGIAS_FRONTEND = {
+  REACT: "react",
+  VUE: "vue",
+};
+
+const TECNOLOGIAS_BACKEND = {
+  CSHARP: "c#",
+  JAVA: "java",
+};
+
+const CAMINHOS_CARREIRA = {
+  ESPECIALIZAR: "especializar",
+  FULLSTACK: "fullstack",
+};
+
+const CONTINUAR = "ok";
+
 function iniciarJogo() {
+  saudarUsuario();
+
+  const areaEscolhida = obterAreaDesenvolvimento();
+  const tecnologiaEscolhida = obterTecnologiaEspecifica(areaEscolhida);
+  const caminhoCarreira = obterCaminhoCarreira(tecnologiaEscolhida);
+  const tecnologiasAdicionais = obterListaTecnologiasAdicionais();
+
+  exibirResumoFinal(
+    areaEscolhida,
+    tecnologiaEscolhida,
+    caminhoCarreira,
+    tecnologiasAdicionais
+  );
+}
+
+function saudarUsuario() {
   alert("Bem-vindo ao Jogo de Carreira em Desenvolvimento!");
   alert(
     "Vamos ajudar você a decidir qual caminho seguir no mundo da programação!"
   );
+}
 
-  const areaEscolhida = prompt(
+function obterAreaDesenvolvimento() {
+  const resposta = prompt(
     "Você quer seguir para a área de Front-End ou Back-End? (Digite 'Front-End' ou 'Back-End')"
-  );
+  ).toLowerCase();
 
-  // Variável para armazenar tecnologia escolhida
-  var tecnologiaEscolhida = "";
-
-  if (areaEscolhida.toLowerCase() === "front-end") {
-    const frontEndEscolha = prompt(
-      "Você quer aprender React ou Vue? (Digite 'React' ou 'Vue')"
-    );
-
-    if (frontEndEscolha.toLowerCase() === "react") {
-      alert(
-        "Ótima escolha! React é uma biblioteca poderosa mantida pelo Facebook e muito popular no mercado!"
-      );
-      tecnologiaEscolhida = "React";
-    } else if (frontEndEscolha.toLowerCase() === "vue") {
-      alert(
-        "Excelente! Vue é um framework progressivo que tem ganhado muita popularidade pela sua simplicidade e flexibilidade!"
-      );
-      tecnologiaEscolhida = "Vue";
-    } else {
-      alert(
-        "Opção não reconhecida. Vamos considerar que você ainda está decidindo."
-      );
-      tecnologiaEscolhida = "tecnologias de Front-End";
-    }
-  } else if (areaEscolhida.toLowerCase() === "back-end") {
-    const backEndEscolha = prompt(
-      "Você quer aprender C# ou Java? (Digite 'C#' ou 'Java')"
-    );
-
-    if (backEndEscolha.toLowerCase() === "c#") {
-      alert(
-        "C# é uma excelente linguagem desenvolvida pela Microsoft, muito usada no desenvolvimento de aplicações empresariais!"
-      );
-      tecnologiaEscolhida = "C#";
-    } else if (backEndEscolha.toLowerCase() === "java") {
-      alert(
-        "Java é uma das linguagens mais utilizadas no mundo, conhecida por sua portabilidade e robustez!"
-      );
-      tecnologiaEscolhida = "Java";
-    } else {
-      alert(
-        "Opção não reconhecida. Vamos considerar que você ainda está decidindo."
-      );
-      tecnologiaEscolhida = "tecnologias de Back-End";
-    }
-  } else {
-    alert(
-      "Opção não reconhecida. Vamos considerar que você está interessado em ambas áreas."
-    );
-    tecnologiaEscolhida = "desenvolvimento de software";
+  if (resposta === AREAS.FRONT_END || resposta === AREAS.BACK_END) {
+    return resposta;
   }
 
-  // Terceira escolha: especialização ou fullstack
-  const carreiraEscolha = prompt(
-    `Você quer seguir se especializando em ${tecnologiaEscolhida} ou se desenvolver para se tornar Fullstack? (Digite 'Especializar' ou 'Fullstack')`
+  alert(
+    "Opção não reconhecida. Vamos considerar que você está interessado em ambas áreas."
   );
+  return "desenvolvimento geral";
+}
 
-  if (carreiraEscolha.toLowerCase() === "especializar") {
-    alert(
-      `Ótimo! A especialização em ${tecnologiaEscolhida} vai te permitir se tornar um expert nessa tecnologia!`
-    );
-  } else if (carreiraEscolha.toLowerCase() === "fullstack") {
-    alert(
-      `Legal! Ser Fullstack te dará uma visão compvara do desenvolvimento, combinando ${tecnologiaEscolhida} com outras tecnologias!`
-    );
-  } else {
-    alert(
-      "Opção não reconhecida. Qualquer caminho que escolher será uma jornada interessante!"
-    );
+function obterTecnologiaEspecifica(area) {
+  if (area === AREAS.FRONT_END) {
+    return obterTecnologiaFrontEnd();
+  } else if (area === AREAS.BACK_END) {
+    return obterTecnologiaBackEnd();
   }
 
-  // Quarta parte: lista de tecnologias para aprender
+  return "desenvolvimento de software";
+}
+
+function obterTecnologiaFrontEnd() {
+  const escolha = prompt(
+    "Você quer aprender React ou Vue? (Digite 'React' ou 'Vue')"
+  ).toLowerCase();
+
+  if (escolha === TECNOLOGIAS_FRONTEND.REACT) {
+    alert(
+      "Ótima escolha! React é uma biblioteca poderosa mantida pelo Facebook e muito popular no mercado!"
+    );
+    return "React";
+  } else if (escolha === TECNOLOGIAS_FRONTEND.VUE) {
+    alert(
+      "Excelente! Vue é um framework progressivo que tem ganhado muita popularidade pela sua simplicidade e flexibilidade!"
+    );
+    return "Vue";
+  }
+
+  alert(
+    "Opção não reconhecida. Vamos considerar que você ainda está decidindo."
+  );
+  return "tecnologias de Front-End";
+}
+
+function obterTecnologiaBackEnd() {
+  const escolha = prompt(
+    "Você quer aprender C# ou Java? (Digite 'C#' ou 'Java')"
+  ).toLowerCase();
+
+  if (escolha === TECNOLOGIAS_BACKEND.CSHARP) {
+    alert(
+      "C# é uma excelente linguagem desenvolvida pela Microsoft, muito usada no desenvolvimento de aplicações empresariais!"
+    );
+    return "C#";
+  } else if (escolha === TECNOLOGIAS_BACKEND.JAVA) {
+    alert(
+      "Java é uma das linguagens mais utilizadas no mundo, conhecida por sua portabilidade e robustez!"
+    );
+    return "Java";
+  }
+
+  alert(
+    "Opção não reconhecida. Vamos considerar que você ainda está decidindo."
+  );
+  return "tecnologias de Back-End";
+}
+
+function obterCaminhoCarreira(tecnologia) {
+  const escolha = prompt(
+    `Você quer seguir se especializando em ${tecnologia} ou se desenvolver para se tornar Fullstack? (Digite 'Especializar' ou 'Fullstack')`
+  ).toLowerCase();
+
+  if (escolha === CAMINHOS_CARREIRA.ESPECIALIZAR) {
+    alert(
+      `Ótimo! A especialização em ${tecnologia} vai te permitir se tornar um expert nessa tecnologia!`
+    );
+    return "Especialização";
+  } else if (escolha === CAMINHOS_CARREIRA.FULLSTACK) {
+    alert(
+      `Legal! Ser Fullstack te dará uma visão completa do desenvolvimento, combinando ${tecnologia} com outras tecnologias!`
+    );
+    return "Fullstack";
+  }
+
+  alert(
+    "Opção não reconhecida. Qualquer caminho que escolher será uma jornada interessante!"
+  );
+  return "Indefinido";
+}
+
+function obterListaTecnologiasAdicionais() {
   alert(
     "Agora, vamos criar sua lista personalizada de tecnologias para aprender!"
   );
 
-  const tecnologiasParaAprender = [];
-  var continuarAdicionando = true;
+  const tecnologias = [];
+  let continuarAdicionando = true;
 
   while (continuarAdicionando) {
     const novaTecnologia = prompt(
       "Digite o nome de uma tecnologia que você gostaria de aprender:"
     );
 
-    if (novaTecnologia) {
-      tecnologiasParaAprender.push(novaTecnologia);
+    if (novaTecnologia && novaTecnologia.trim() !== "") {
+      tecnologias.push(novaTecnologia);
+      exibirComentarioSobreTecnologia(novaTecnologia);
 
-      switch (novaTecnologia.toLowerCase()) {
-        case "javascript":
-          alert(
-            "JavaScript é a linguagem da web! Essencial para qualquer desenvolvedor web moderno."
-          );
-          break;
-        case "python":
-          alert(
-            "Python é fantástica para iniciantes e profissionais, usada em IA, ciência de dados e muito mais!"
-          );
-          break;
-        case "php":
-          alert(
-            "PHP é amplamente utilizada para desenvolvimento web e alimenta grandes sites como Facebook e WordPress."
-          );
-          break;
-        case "ruby":
-          alert(
-            "Ruby é conhecida por sua elegância e produtividade, especialmente com o framework Ruby on Rails."
-          );
-          break;
-        case "typescript":
-          alert(
-            "TypeScript adiciona tipagem estática ao JavaScript, tornando o código mais seguro e manutenível."
-          );
-          break;
-        case "swift":
-          alert(
-            "Swift é a linguagem moderna da Apple para desenvolvimento iOS e macOS."
-          );
-          break;
-        case "rust":
-          alert(
-            "Rust é focada em segurança, velocidade e concorrência, ganhando popularidade rapidamente."
-          );
-          break;
-        case "kotlin":
-          alert(
-            "Kotlin é moderna e prática, oficialmente adotada para desenvolvimento Android."
-          );
-          break;
-        case "sql":
-          alert(
-            "SQL é fundamental para trabalhar com bancos de dados relacionais."
-          );
-          break;
-        case "html":
-          alert(
-            "HTML é a base de qualquer página web, definindo sua estrutura e conteúdo."
-          );
-          break;
-        case "css":
-          alert(
-            "CSS dá vida às páginas web, controlando a aparência e layout dos elementos."
-          );
-          break;
-        default:
-          alert(
-            `${novaTecnologia} é uma ótima escolha para adicionar ao seu arsenal de conhecimentos!`
-          );
-      }
-
-      const continuar = prompt(
-        "Tem mais alguma tecnologia que você gostaria de aprender? (Digite 'ok' para continuar ou qualquer outra coisa para finalizar)"
-      );
-      continuarAdicionando = continuar.toLowerCase() === "ok";
+      continuarAdicionando =
+        prompt(
+          "Tem mais alguma tecnologia que você gostaria de aprender? (Digite 'ok' para continuar ou qualquer outra coisa para finalizar)"
+        ).toLowerCase() === CONTINUAR;
     } else {
       alert("Você não inseriu nenhuma tecnologia. Vamos continuar.");
     }
   }
 
-  // Resumo final
-  var mensagemFinal = "Resumo do seu caminho de aprendizado:\n";
-  mensagemFinal += `Área principal: ${areaEscolhida}\n`;
-  mensagemFinal += `Tecnologia específica: ${tecnologiaEscolhida}\n`;
-  mensagemFinal += `Direção de carreira: ${carreiraEscolha}\n`;
-  mensagemFinal += "\nLista de tecnologias para aprender:\n";
+  return tecnologias;
+}
 
-  if (tecnologiasParaAprender.length > 0) {
-    for (var i = 0; i < tecnologiasParaAprender.length; i++) {
-      mensagemFinal += `${i + 1}. ${tecnologiasParaAprender[i]}\n`;
-    }
+function exibirComentarioSobreTecnologia(tecnologia) {
+  const tecnologiaLowerCase = tecnologia.toLowerCase();
+  const comentarios = {
+    javascript:
+      "JavaScript é a linguagem da web! Essencial para qualquer desenvolvedor web moderno.",
+    python:
+      "Python é fantástica para iniciantes e profissionais, usada em IA, ciência de dados e muito mais!",
+    php: "PHP é amplamente utilizada para desenvolvimento web e alimenta grandes sites como Facebook e WordPress.",
+    ruby: "Ruby é conhecida por sua elegância e produtividade, especialmente com o framework Ruby on Rails.",
+    typescript:
+      "TypeScript adiciona tipagem estática ao JavaScript, tornando o código mais seguro e manutenível.",
+    swift:
+      "Swift é a linguagem moderna da Apple para desenvolvimento iOS e macOS.",
+    rust: "Rust é focada em segurança, velocidade e concorrência, ganhando popularidade rapidamente.",
+    kotlin:
+      "Kotlin é moderna e prática, oficialmente adotada para desenvolvimento Android.",
+    sql: "SQL é fundamental para trabalhar com bancos de dados relacionais.",
+    html: "HTML é a base de qualquer página web, definindo sua estrutura e conteúdo.",
+    css: "CSS dá vida às páginas web, controlando a aparência e layout dos elementos.",
+  };
+
+  const mensagem =
+    comentarios[tecnologiaLowerCase] ||
+    `${tecnologia} é uma ótima escolha para adicionar ao seu arsenal de conhecimentos!`;
+  alert(mensagem);
+}
+
+function exibirResumoFinal(area, tecnologia, carreira, listaTecnologias) {
+  let mensagem = montarMensagemResumo(
+    area,
+    tecnologia,
+    carreira,
+    listaTecnologias
+  );
+  alert(mensagem);
+}
+
+function montarMensagemResumo(area, tecnologia, carreira, listaTecnologias) {
+  let mensagem = "Resumo do seu caminho de aprendizado:\n";
+  mensagem += `Área principal: ${area}\n`;
+  mensagem += `Tecnologia específica: ${tecnologia}\n`;
+  mensagem += `Direção de carreira: ${carreira}\n`;
+  mensagem += "\nLista de tecnologias para aprender:\n";
+
+  if (listaTecnologias.length > 0) {
+    mensagem += formatarListaTecnologias(listaTecnologias);
   } else {
-    mensagemFinal += "Nenhuma tecnologia adicional selecionada.";
+    mensagem += "Nenhuma tecnologia adicional selecionada.";
   }
 
-  mensagemFinal +=
+  mensagem +=
     "\nLembre-se: o aprendizado é uma jornada contínua. Boa sorte em sua carreira de desenvolvimento!";
 
-  alert(mensagemFinal);
+  return mensagem;
+}
+
+function formatarListaTecnologias(tecnologias) {
+  return tecnologias.map((tech, index) => `${index + 1}. ${tech}`).join("\n");
 }
 
 // Iniciar o jogo
