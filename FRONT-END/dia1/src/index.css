@@ -4,3 +4,16 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  background-image: url("../src/assets/background.png");
+  background-repeat: no-repeat;
+  background-size: auto;
+  min-height: 100vh;
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
