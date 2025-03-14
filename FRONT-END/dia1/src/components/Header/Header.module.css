@@ -10,6 +10,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .conjuntoLogo {
@@ -19,7 +21,6 @@
 }
 
 .conjuntoLogo img {
-  width: 31.57;
   height: auto;
 }
 
@@ -47,12 +48,11 @@
   font-weight: 400;
   padding: 0 8px;
   transition: color 0.3s ease;
-
   font-family: "Montserrat", sans-serif;
 }
 
 .navLink:hover {
-  color: #ffcb47;
+  color: #8a8a8a;
 }
 
 .divider {

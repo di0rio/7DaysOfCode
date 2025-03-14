@@ -16,6 +16,7 @@ const navigation = [
 const Header = () => {
   return (
     <header className={styles.header}>
+
       <div className={styles.container}>
         <div className={styles.conjuntoLogo}>
           <img src={logo} alt="Logo Casa Verde" />
