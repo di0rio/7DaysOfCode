@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import styled from "styled-components";
 
@@ -39,6 +39,7 @@ const YellowCircle = styled.div`
   height: 450px;
   top: -100px;
   right: -100px;
+  background-color: #ffcc33;
   border-radius: 50%;
   z-index: 1;
 `;
@@ -47,6 +48,7 @@ const WhiteShape = styled.div`
   position: absolute;
   width: 200px;
   height: 200px;
+  background-color: white;
   border-radius: 50%;
   bottom: 40px;
   right: -50px;
@@ -116,9 +118,9 @@ const EmailIcon = styled.span`
 
 const Input = styled.input`
   border: none;
-  height: 20%;
+  height: 60%;
   width: 100%;
-  font-size: 16px;
+  font-size: 14px;
   color: #757575;
   outline: none;
 
@@ -130,30 +132,61 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  background-color: #ffcc33;
-  color: #fff;
+  background-color: ${(props) => (props.disabled ? "#e0e0e0" : "#ffcc33")};
+  color: ${(props) => (props.disabled ? "#9e9e9e" : "#fff")};
   border: none;
   padding: 0 0px;
   font-size: 16px;
   font-weight: 400;
-  cursor: pointer;
+  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
   transition: background-color 0.2s ease;
   min-width: 180px;
   font-family: "Montserrat", sans-serif;
 
-
   &:hover {
-    background-color: #f0c025;
+    background-color: ${(props) => (props.disabled ? "#e0e0e0" : "#f0c025")};
   }
+`;
+
+const SuccessMessage = styled.div`
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #e8f5e9;
+  border-left: 4px solid #4caf50;
+  color: #2e7d32;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  border-radius: 4px;
+  max-width: 485px;
 `;
 
 const NewsletterSection = () => {
   const [email, setEmail] = useState("");
+  const [isEmailValid, setIsEmailValid] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
+  const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+  };
+
+  useEffect(() => {
+    setIsEmailValid(validateEmail(email));
+  }, [email]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Email submitted:", email);
-    setEmail("");
+
+    if (isEmailValid) {
+      setShowSuccessMessage(true);
+
+      console.log("Email submitted:", email);
+
+      setTimeout(() => {
+        setEmail("");
+        setShowSuccessMessage(false);
+      }, 5000);
+    }
   };
 
   return (
@@ -195,8 +228,17 @@ const NewsletterSection = () => {
               required
             />
           </InputContainer>
-          <Button type="submit">Assinar newsletter</Button>
+          <Button type="submit" disabled={!isEmailValid}>
+            Assinar newsletter
+          </Button>
         </NewsletterForm>
+
+        {showSuccessMessage && (
+          <SuccessMessage>
+            Obrigado pela sua assinatura, você receberá nossas novidades no
+            e-mail {email}
+          </SuccessMessage>
+        )}
       </ContentContainer>
       <ImageContainer>
         <YellowCircle />
