@@ -1,6 +1,7 @@
 import styles from "./CardOffers.module.css";
 
 const CardOffers = ({ img, alt, name, price }) => {
+  
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
@@ -9,11 +10,13 @@ const CardOffers = ({ img, alt, name, price }) => {
       <div className={styles.content}>
         <div className={styles.info}>
           <h2 className={styles.name}>{name}</h2>
-          <p className={styles.price}>R$ {price}</p>
+          <p className={styles.price}>{price}</p>
         </div>
-        <button className={styles.buyButton}>
-          Comprar <span className={styles.arrow}>→</span>
-        </button>
+        <div className={styles.buyButtonContainer}>
+          <button className={styles.buyButton}>
+            Comprar <span className={styles.arrow}>→</span>
+          </button>
+        </div>
       </div>
     </div>
   );

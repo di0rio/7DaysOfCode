@@ -32,14 +32,17 @@
 .Produtos {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 .Fileira1 {
   display: flex;
-  gap: 5em;
+  gap: 2em;
 }
 
 .Fileira2 {
   display: flex;
-  gap: 5em;
+  gap: 2em;
+  margin-top: 5em;
+
 }

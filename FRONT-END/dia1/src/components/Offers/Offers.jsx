@@ -18,14 +18,14 @@ const Offers = () => {
       </div>
       <div className={styles.Produtos}>
         <div className={styles.Fileira1}>
-        <CardOffers img={prod1} name={'Crassulaovata'} price={'20,00'}/>
-        <CardOffers img={prod2} name={'Crassulaovata'} price={'20,00'}/>
-        <CardOffers img={prod3} name={'Crassulaovata'} price={'20,00'}/>
+          <CardOffers img={prod1} name={"Ajugaeptans"} price={"20,00"} />
+          <CardOffers img={prod2} name={"Cordylinefruticosa"} price={"20,00"} />
+          <CardOffers img={prod3} name={"Crassulaovata"} price={"20,00"} />
         </div>
         <div className={styles.Fileira2}>
-        <CardOffers img={prod4} name={'Crassulaovata'} price={'20,00'}/>
-        <CardOffers img={prod5} name={'Crassulaovata'} price={'20,00'}/>
-        <CardOffers img={prod6} name={'Crassulaovata'} price={'20,00'}/>
+          <CardOffers img={prod4} name={"Cyperusrotundus"} price={"20,00"} />
+          <CardOffers img={prod5} name={"Delaireaodorata"} price={"20,00"} />
+          <CardOffers img={prod6} name={"Daturametel"} price={"20,00"} />
         </div>
       </div>
     </div>
