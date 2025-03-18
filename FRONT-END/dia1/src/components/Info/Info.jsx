@@ -125,6 +125,7 @@ const Input = styled.input`
   &::placeholder {
     color: #bdbdbd;
     font-weight: 300;
+    font-family: "Montserrat", sans-serif;
   }
 `;
 
@@ -134,10 +135,12 @@ const Button = styled.button`
   border: none;
   padding: 0 0px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
   transition: background-color 0.2s ease;
   min-width: 180px;
+  font-family: "Montserrat", sans-serif;
+
 
   &:hover {
     background-color: #f0c025;
