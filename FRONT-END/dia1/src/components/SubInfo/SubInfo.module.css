@@ -1,73 +1,73 @@
 .subInfoContainer {
-    display: flex;
-    max-width: 995px;
-    margin: 0 auto;
-    overflow: hidden;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.075);
-  }
-  
-  .imageContainer {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .plantImage {
-    height: auto;
-    object-fit: cover;
-  }
-  
-  .contentContainer {
-    flex: 1;
-    padding: 45px 40px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .subTitle {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 22px;
-    font-weight: 400;
-    color: #6a6a6a;
-    margin: 0 0 12px;
-  }
-  
-  .title {
-    font-family: 'Elsie Swash Caps', serif;
-    font-size: 42px;
-    font-weight: 900;
-    color: #202020;
-    margin: 0 0 32px;
-  }
-  
-  .stepsList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .step {
-    display: flex;
-    align-items: center;
-    margin-bottom: 24px;
-  }
-  
-  .step:last-child {
-    margin-bottom: 0;
-  }
-  
-  .stepCircle {
-    width: 52px;
-    height: 52px;
-    background-color: #FFCB47;
-    border-radius: 50%;
-    margin-right: 16px;
-    flex-shrink: 0;
-  }
-  
-  .stepText {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    color: #6a6a6a;
-  }
+  display: flex;
+  max-width: 995px;
+  margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.075);
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plantImage {
+  height: auto;
+  object-fit: cover;
+}
+
+.contentContainer {
+  flex: 1;
+  padding: 45px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.subTitle {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #6a6a6a;
+  margin: 0 0 12px;
+}
+
+.title {
+  font-family: "Elsie Swash Caps", serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: #202020;
+  margin: 0 0 32px;
+}
+
+.stepsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.step:last-child {
+  margin-bottom: 0;
+}
+
+.stepCircle {
+  width: 52px;
+  height: 52px;
+  background-color: #ffcb47;
+  border-radius: 50%;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.stepText {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  color: #6a6a6a;
+}

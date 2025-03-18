@@ -28,29 +28,8 @@ const ImageContainer = styled.div`
 const PlantImage = styled.img`
   height: 110%;
   position: relative;
-  bottom: 10px;
   right: 0;
   z-index: 2;
-`;
-
-const YellowCircle = styled.div`
-  position: absolute;
-  width: 450px;
-  height: 450px;
-  top: -100px;
-  right: -100px;
-  border-radius: 50%;
-  z-index: 1;
-`;
-
-const WhiteShape = styled.div`
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  bottom: 40px;
-  right: -50px;
-  z-index: 1;
 `;
 
 const LowTitle = styled.h3`
@@ -239,8 +218,6 @@ const NewsletterSection = () => {
         )}
       </ContentContainer>
       <ImageContainer>
-        <YellowCircle />
-        <WhiteShape />
         <PlantImage src={Planta} alt="Ficus Lyrata" />
       </ImageContainer>
     </SectionContainer>

@@ -1,0 +1,45 @@
+.Container {
+  display: flex;
+  flex-direction: column;
+  padding: 5em;
+  justify-content: center;
+  align-items: center;
+}
+
+.Title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Title p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: #6a6a6a;
+  margin: 0 0 12px;
+}
+
+.Title h1 {
+  font-family: "Elsie Swash Caps", serif;
+  font-size: 82px;
+  font-weight: 900;
+  color: #202020;
+  margin: 0 0 32px;
+}
+
+.Produtos {
+  display: flex;
+  flex-direction: column;
+}
+
+.Fileira1 {
+  display: flex;
+  gap: 5em;
+}
+
+.Fileira2 {
+  display: flex;
+  gap: 5em;
+}

@@ -1,0 +1,62 @@
+.container {
+  background-color: white;
+  border-radius: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  width: 379px;
+  height: 200px;
+}
+
+.imageContainer {
+  height: 200px;
+  width: 379px;
+  overflow: hidden;
+}
+
+.image {
+  width: auto;
+  height: 200px;
+  object-fit: cover;
+}
+
+.content {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info {
+  flex-grow: 1;
+}
+
+.name {
+  font-family: "Elsie Swash Caps", serif;
+  font-size: 32px;
+  margin: 0 0 5px 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.price {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  color: #666;
+}
+
+.buyButton {
+  background: none;
+  border: none;
+  color: #ffd700;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+
+.arrow {
+  margin-left: 5px;
+}

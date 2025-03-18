@@ -5,6 +5,7 @@ import Header from "../../components/Header/Header";
 import manchaAmarela from "../../assets/manchaAmarela.png";
 import Info from "../../components/Info/Info";
 import SubInfo from "../../components/SubInfo/SubInfo";
+import Offers from "../../components/Offers/Offers";
 
 const Home = () => {
   return (
@@ -27,7 +28,7 @@ const Home = () => {
           <SubInfo />
         </div>
         <div className={styles.Offers}>
-
+          <Offers />
         </div>
       </div>
     </div>
