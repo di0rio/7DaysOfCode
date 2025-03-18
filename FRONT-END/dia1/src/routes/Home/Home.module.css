@@ -11,6 +11,11 @@
   height: auto;
 }
 
+.subInfo{
+  margin-bottom: 100em;
+  z-index: 10;
+}
+
 @media (max-width: 768px) {
   .heroImage {
     right: -30%;

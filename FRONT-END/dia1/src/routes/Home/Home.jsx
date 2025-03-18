@@ -4,6 +4,7 @@ import Header from "../../components/Header/Header";
 
 import manchaAmarela from "../../assets/manchaAmarela.png";
 import Info from "../../components/Info/Info";
+import SubInfo from "../../components/SubInfo/SubInfo";
 
 const Home = () => {
   return (
@@ -21,6 +22,12 @@ const Home = () => {
         </div>
         <div className={styles.info}>
           <Info />
+        </div>
+        <div className={styles.subInfo}>
+          <SubInfo />
+        </div>
+        <div className={styles.Offers}>
+
         </div>
       </div>
     </div>
