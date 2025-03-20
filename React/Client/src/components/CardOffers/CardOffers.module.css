@@ -3,6 +3,7 @@
   width: 379px;
   height: 200px;
   display: flex;
+  cursor: pointer;
 }
 
 .imageContainer {
@@ -64,4 +65,9 @@
 
 .arrow {
   margin-left: 5em;
+}
+
+.container:hover {
+  transform: scale(1.02);
+  transition: 1s;
 }
