@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import InputSearch from "../../components/InputSearch/InputSearch";
+import Header from "../../components/Header/Header";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div>
+      <div>
+        <Header />
+      </div>
+      <InputSearch />
+    </div>
+  );
+};
 
-export default Home
+export default Home;
