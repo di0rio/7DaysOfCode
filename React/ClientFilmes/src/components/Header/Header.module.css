@@ -1,0 +1,12 @@
+#Title {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.Container {
+  margin-top: 1.5em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

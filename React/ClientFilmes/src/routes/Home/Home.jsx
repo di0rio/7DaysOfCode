@@ -1,5 +1,4 @@
 import React from "react";
-import InputSearch from "../../components/InputSearch/InputSearch";
 import Header from "../../components/Header/Header";
 
 const Home = () => {
@@ -8,7 +7,6 @@ const Home = () => {
       <div>
         <Header />
       </div>
-      <InputSearch />
     </div>
   );
 };
