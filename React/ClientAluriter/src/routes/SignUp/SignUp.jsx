@@ -6,18 +6,14 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Login tentado", { email, senha });
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-white">
-      <div className="w-full max-w-xs">
-        <form
-          onSubmit={handleSubmit}
-          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
-        >
-          <div className="mb-4 text-center">
-            <h1 className="text-2xl font-bold text-black">Aluritter</h1>
+      <div className="w-full max-w-[358px] px-4">
+        <form onSubmit={handleSubmit} className="w-full">
+          <div className="mb-[26px] text-center">
+            <h1 className="text-[32px] font-bold text-[#4A4A4A]">Aluritter</h1>
           </div>
 
           <div className="mb-4">
@@ -26,33 +22,31 @@ const SignUp = () => {
               placeholder="email@exemplo.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-full h-[56px] px-4 py-2 border border-[#D3D3D3] rounded-[8px] text-[16px] text-[#4A4A4A] focus:outline-none focus:border-blue-500"
             />
           </div>
 
-          <div className="mb-6">
+          <div className="mb-4">
             <input
               type="password"
               placeholder="Senha"
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+              className="w-full h-[56px] px-4 py-2 border border-[#D3D3D3] rounded-[8px] text-[16px] text-[#4A4A4A] focus:outline-none focus:border-blue-500"
             />
           </div>
 
-          <div>
-            <button
-              type="submit"
-              className="bg-[#2ECC71] hover:bg-green-600 text-white font-bold py-2 px-4 rounded w-full focus:outline-none focus:shadow-outline"
-            >
-              Criar uma nova conta
-            </button>
-          </div>
+          <button
+            type="submit"
+            className="w-full h-[56px] bg-[#00D261] text-white text-[16px] font-bold rounded-[8px] hover:bg-[#00B050] transition-colors duration-300"
+          >
+            Criar uma nova conta
+          </button>
 
           <div className="text-center mt-4">
-            <p className="text-sm text-gray-600">
+            <p className="text-[16px] text-[#4A4A4A]">
               Já possui uma conta?{" "}
-              <a href="#" className="text-blue-500 hover:text-blue-700">
+              <a href="#" className="text-[#00D261] hover:underline">
                 Acessar agora
               </a>
             </p>
