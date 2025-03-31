@@ -1,0 +1,93 @@
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #1a1b36;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.selected {
+  border: 2px solid #0078ff;
+}
+
+.cardContent {
+  display: flex;
+  gap: 20px;
+}
+
+.posterContainer {
+  flex-shrink: 0;
+}
+
+.poster {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.titleSection {
+  margin-bottom: 8px;
+}
+
+.title {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.ratingSection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+}
+
+.starIcon {
+  color: gold;
+}
+
+.favoriteBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: white;
+  cursor: pointer;
+}
+
+.heartIcon {
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.favorited {
+  color: #ff3366;
+}
+
+.description {
+  color: #b9b9b9;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}

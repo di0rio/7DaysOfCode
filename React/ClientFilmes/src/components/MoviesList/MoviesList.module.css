@@ -1,0 +1,14 @@
+.moviesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.noMovies {
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
