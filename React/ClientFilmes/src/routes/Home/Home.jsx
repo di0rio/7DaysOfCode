@@ -1,4 +1,4 @@
-import React from "react";
+import styles from "./Home.module.css";
 import Header from "../../components/Header/Header";
 import Filter from "../../components/Filter/Filter";
 import MoviesList from "../../components/MoviesList/MoviesList";
@@ -33,7 +33,7 @@ const Home = () => {
       <div>
         <Header />
       </div>
-      <div>
+      <div className={styles.Filter}>
         <Filter />
       </div>
       <div>
