@@ -1,4 +1,5 @@
 import InputSearch from "../InputSearch/InputSearch";
+
 import styles from "./Header.module.css";
 
 const Header = () => {

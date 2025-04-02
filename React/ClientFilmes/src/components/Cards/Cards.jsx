@@ -2,7 +2,6 @@ import React from "react";
 import { FaStar, FaHeart } from "react-icons/fa";
 import styles from "./Cards.module.css";
 
-// Componente Cards que recebe propriedades individuais
 const Cards = ({
   img,
   title,
