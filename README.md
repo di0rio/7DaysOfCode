@@ -43,11 +43,13 @@ Projeto visual de listagem de filmes.
 ## 🛠️ Tecnologias Utilizadas
 
 - React
-- HTML/CSS
+- CSS
 - JavaScript (ES6+)
+- TypeScript
 - Node.js (início da implementação)
 - Vite (para bundler nos projetos React)
 - Git e GitHub para versionamento
+- tailwind
 
 ---
 
