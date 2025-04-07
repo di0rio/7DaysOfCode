@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Eye, EyeOff, Lock, Mail } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
   const [email, setEmail] = useState("");
@@ -27,6 +28,14 @@ const SignupPage = () => {
     const newPassword = e.target.value;
     setSenha(newPassword);
     validatePassword(newPassword);
+  };
+
+  const navigate = useNavigate();
+  const irParaSignIn = () => {
+    navigate("/signin");
+  };
+  const irParaHome = () => {
+    navigate("/home");
   };
 
   return (
@@ -94,11 +103,12 @@ const SignupPage = () => {
           </div>
 
           <button
+            onClick={irParaHome}
             type="submit"
             disabled={!isPasswordValid}
             className="w-[200px] h-12 bg-neutral-800 text-white text-lg font-semibold rounded-b-md
             hover:bg-neutral-700 transition-colors duration-300 mt-8 mb-6
-            disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
             Criar uma nova conta
           </button>
@@ -106,7 +116,8 @@ const SignupPage = () => {
           <p className="text-base text-neutral-600">
             Já possui uma conta?{" "}
             <a
-              href="/login"
+              onClick={irParaSignIn}
+              href="/signin"
               className="text-neutral-800 hover:underline font-semibold"
             >
               Acessar agora

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Eye, EyeOff, Lock, Mail } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -27,6 +28,19 @@ const SignIn = () => {
     const newPassword = e.target.value;
     setSenha(newPassword);
     validatePassword(newPassword);
+  };
+
+  // const navigation = [
+  //   { componente: "/signup", name: "Signup" },
+  //   { componente: "/", name: "Home" },
+  // ];
+
+  const navigate = useNavigate();
+  const irParaSignUp = () => {
+    navigate("/");
+  };
+  const irParaHome = () => {
+    navigate("/home");
   };
 
   return (
@@ -94,19 +108,20 @@ const SignIn = () => {
           </div>
 
           <button
+            onClick={irParaHome}
             type="submit"
             disabled={!isPasswordValid}
             className="w-[200px] h-12 bg-neutral-800 text-white text-lg font-semibold rounded-b-md
             hover:bg-neutral-700 transition-colors duration-300 mt-8 mb-6
-            disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
           >
-            Criar uma nova conta
+            Entrar
           </button>
 
           <p className="text-base text-neutral-600">
             Ainda não possui uma conta?{" "}
             <a
-              href="/login"
+              onClick={irParaSignUp}
               className="text-neutral-800 hover:underline font-semibold"
             >
               Cadastre-se
