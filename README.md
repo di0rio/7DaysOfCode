@@ -70,16 +70,12 @@ Projeto visual de listagem de filmes.
 Instale as dependências:
 
  ```bash
-Copiar
-Editar
-npm install
-Rode o projeto:
 
- ```bash
-Copiar
-Editar
+npm install
+
 npm run dev
 
+   ```
 📧 Contato
 Feito com 💙 por [di0rio]
 Entre em contato: [caua.diorio29@gmail.com]
