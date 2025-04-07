@@ -10,7 +10,7 @@ const Header = () => {
           <div>
             <h1
               id={styles.Title}
-              className="text-2xl md:text-3xl font-bold text-white"
+              className="text-1xl md:text-4xl font-bold text-white"
             >
               Filmes Populares
             </h1>

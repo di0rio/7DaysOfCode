@@ -11,6 +11,7 @@ const Cards = ({
   isFavorite,
   isSelected,
 }) => {
+  
   return (
     <div className={`${styles.card} ${isSelected ? styles.selected : ""}`}>
       <div className={styles.cardContent}>
