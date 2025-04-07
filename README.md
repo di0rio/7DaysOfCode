@@ -69,16 +69,17 @@ Projeto visual de listagem de filmes.
    cd 7DaysOfCode/React/NOME_DO_PROJETO
 Instale as dependências:
 
-bash
+ ```bash
 Copiar
 Editar
 npm install
 Rode o projeto:
 
-bash
+ ```bash
 Copiar
 Editar
 npm run dev
+
 📧 Contato
 Feito com 💙 por [di0rio]
 Entre em contato: [caua.diorio29@gmail.com]
